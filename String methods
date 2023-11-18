@@ -1,0 +1,558 @@
+
+
+# Find Function :
+
+
+s = "Hello, World!"
+index = s.find("World")
+print(index)  
+
+s = "Hello, World!"
+index = s.lower().find("world")
+print(index)  
+
+s = "Hello, World!"
+index = s.find("o", 5, 10)
+print(index)  
+
+s = ["apple", "banana", "orange"]
+index = next((i for i, s in enumerate(s) if s.find("an") != -1), -1)
+print(index)  
+
+s = "Hello, World!"
+if s.find("Python") != -1:
+    print("Substring found!")
+else:
+    print("Substring not found!")
+
+
+# Split Function :
+
+s = "Hello, how are you?"
+words = s.split()
+print(words)  
+
+s = "John, Jane, Peter, Mary"
+name_list = s.split(", ")
+print(name_list)  
+
+s = "Python"
+characters = list(s)
+print(characters)  
+
+import re
+
+text = "The quick brown fox jumps over the lazy dog."
+words = re.split(r"\W+", text)
+print(words)  
+
+s = "I love coding and programming"
+words = s.split(" ", 2)
+print(words)
+
+
+# Join Function :
+
+my_list = ['Hello', 'world', 'how', 'are', 'you?']
+result = ' '.join(my_list)
+print(result)
+
+my_list = [1, 2, 3, 4, 5]
+result = ', '.join(str(x) for x in my_list)
+print(result)
+
+my_string = 'Hello, world!'
+result = '-'.join(my_string)
+print(result)
+
+my_tuple = ('apple', 'banana', 'orange')
+result = ', '.join(my_tuple)
+print(result)
+
+my_dict = {'name': 'John', 'age': 25, 'country': 'USA'}
+result = ', '.join(f'{key}: {value}' for key, value in my_dict.items())
+print(result)
+
+# Strip Function :
+
+t = "  Hello, World!  "
+stripped_text = t.strip()
+print(stripped_text)  
+
+t = "+++Welcome to Python+++"
+stripped_text = t.strip("+")
+print(stripped_text)  
+
+t = "Line 1\nLine 2\nLine 3\n"
+stripped_text = t.strip("\n")
+print(stripped_text)  
+
+t = "12345Hello, World!67890"
+stripped_text = t.strip("0123456789")
+print(stripped_text)  
+
+t= "###***!!!Hello!!!***###"
+stripped_text = t.strip("#*!")
+print(stripped_text)  
+
+# rstrip Function :
+
+s = "Hello World    "
+trimmed_string = s.rstrip()
+print(trimmed_string)  
+
+s = "Hello World!!!"
+trimmed_string = s.rstrip("!")
+print(trimmed_string)  
+
+s = "Python 3.9"
+trimmed_string = s.rstrip("0123456789")
+print(trimmed_string)  
+
+s = "Hello\nWorld\n"
+trimmed_string = s.rstrip("\n")
+print(trimmed_string)  
+
+s = "Hello World Hello"
+trimmed_string = s.rstrip("Hello")
+print(trimmed_string)  
+
+# rsplit Function :
+
+s = "Hello, how are you today?"
+words = s.rsplit(" ")
+print(words)
+
+s = "Hello, how are you today?"
+words = s.rsplit(" ", 3)
+print(words)
+
+
+s = "apple, banana, orange, mango"
+fruits = s.rsplit(", ")
+print(fruits)
+
+s = "one, two, three, four, five"
+numbers = s.rsplit(", ", 2)
+print(numbers)
+
+
+# rindex Function :
+
+s = "Hello, World!"
+last_index = s.rindex("o")
+print(last_index)  
+
+s = "Hello, World!"
+last_index = s.rindex("l")
+print(last_index)  
+
+s = "Hello, World!"
+last_index = s.rindex("o", 0, 5)
+print(last_index)  
+
+s = "Hello, World!"
+last_index = s.rindex("l", 0, 7)
+print(last_index)  
+
+s = "Hello, World!"
+try:
+    last_index = s.rindex("z")
+    print(last_index)
+except ValueError:
+    print("Character not found.")
+
+
+# Capitalize Function :
+
+t= "hello world"
+capitalized_text = t.capitalize()
+print(capitalized_text)  
+
+t = "python programming is fun"
+capitalized_sentence = t.capitalize()
+print(capitalized_sentence)  
+
+t = "apple"
+capitalized_word = t.capitalize()
+print(capitalized_word)  
+
+empty_string = ""
+capitalized_empty_string = empty_string.capitalize()
+print(capitalized_empty_string)  
+
+mixed_case = "oLD mACDONALD"
+capitalized_mixed_case = mixed_case.capitalize()
+print(capitalized_mixed_case)
+
+
+# Casefold Function :
+
+s = "Hello, World!"
+result = s.casefold()
+print(result) 
+
+s = "HÉllÔ, WÖrld!"
+result = s.casefold()
+print(result)  
+
+s1 = "Hello, World!"
+s2 = "HELLO, WORLD!"
+if s1.casefold() == s2.casefold():
+    print("Strings are equal")
+else:
+    print("Strings are not equal")
+
+
+user_input = input("Enter a word: ")
+if user_input.casefold() == "python":
+    print("You entered 'Python'")
+else:
+    print("You did not enter 'Python'")
+
+import unicodedata
+
+s= "n\u0303"
+result = unicodedata.normalize("NFD", s).casefold()
+print(result) 
+
+# Upper Function :
+
+s= "hello, world!"
+uppercase_string = s.upper()
+print(uppercase_string)  
+
+s= input("Enter a string: ")
+uppercase_string = s.upper()
+print(uppercase_string)
+
+s1 = "Hello, World!"
+s2 = "hello, world!"
+if s1.upper() == s2.upper():
+    print("The strings are equal.")
+else:
+    print("The strings are not equal.")
+
+def case_insensitive_search(s, keyword):
+    return keyword.upper() in s.upper()
+
+text = "The quick brown fox jumps over the lazy dog"
+keyword = "FOX"
+if case_insensitive_search(text, keyword):
+    print("Keyword found!")
+else:
+    print("Keyword not found.")
+
+name = input("Enter your name: ")
+if name.upper() == "JOHN":
+    print("Hello, John!")
+else:
+    print("Hello, " + name.capitalize() + "!")
+
+
+# Isalpha Function :
+
+s1 = "HelloWorld"
+print(string1.isalpha())  
+
+s2 = "Hello123"
+print(s2.isalpha())  
+
+user_input = input("Enter your name: ")
+if user_input.isalpha():
+    print("Valid input")
+else:
+    print("Invalid input. Please enter alphabetic characters only.")
+
+char1 = 'A'
+print(char1.isalpha())  
+
+char2 = '1'
+print(char2.isalpha()) 
+
+list1 = ['apple', 'banana', 'orange']
+print(all(item.isalpha() for item in list1)) 
+
+list2 = ['apple', '123', 'orange']
+print(all(item.isalpha() for item in list2))  
+
+string = "Hello123World"
+filtered_string = ''.join(char for char in string if char.isalpha())
+print(filtered_string)
+
+
+# Isalnum Function :
+
+s1 = "Hello123"
+print(s1.isalnum())  
+
+s2 = "Hello 123"
+print(s2.isalnum())  
+
+password = input("Enter your password: ")
+if password.isalnum():
+    print("Valid password.")
+else:
+    print("Password must contain only alphanumeric characters.")
+
+my_list = ["Hello", "123", "World!", "@#$"]
+filtered_list = [item for item in my_list if item.isalnum()]
+print(filtered_list) 
+
+string = "Hello, world! This is 2023."
+alphanumeric_string = ''.join(char for char in string if char.isalnum())
+print(alphanumeric_string) 
+
+def validate_username(username):
+    if username.isalnum():
+        print("Valid username.")
+    else:
+        print("Username must contain only alphanumeric characters.")
+
+validate_username("JohnDoe")   
+validate_username("Jane@Doe") 
+
+
+# Isdigit Function :
+
+s = "12345"
+if s.isdigit():
+    print("Valid positive integer")
+else:
+    print("Not a valid positive integer")
+
+character = '9'
+if character.isdigit():
+    print("Character is a digit")
+else:
+    print("Character is not a digit")
+
+password = input("Enter your password: ")
+if password.isdigit():
+    print("Valid password")
+else:
+    print("Invalid password. Password should only contain digits.")
+
+string = "Hello12345World"
+digit_count = sum(1 for char in string if char.isdigit())
+print("Number of digits:", digit_count)
+
+string = "abc123xyz789"
+digits = ''.join(char for char in string if char.isdigit())
+non_digits = ''.join(char for char in string if not char.isdigit())
+print("Digits:", digits)
+print("Non-digits:", non_digits)
+
+# Lower Function :
+
+text = "HELLO, WORLD!"
+lower_text = text.lower()
+print(lower_text)  
+
+word1 = "apple"
+word2 = "APPLE"
+if word1.lower() == word2.lower():
+    print("The words are the same.")
+else:
+    print("The words are different.")
+
+
+user_input = input("Enter a word: ")
+lower_input = user_input.lower()
+print(lower_input)
+
+sentence = "The quick brown fox jumps over the lazy dog."
+word = "FOX"
+if word.lower() in sentence.lower():
+    print("The word is present in the sentence.")
+else:
+    print("The word is not present in the sentence.")
+
+
+words = ["Python", "Programming", "Language"]
+lower_words = [word.lower() for word in words]
+print(lower_words)
+
+# Islower Function :
+
+
+character = 'a'
+if character.islower():
+    print(f"{character} is lowercase")
+else:
+    print(f"{character} is not lowercase")
+
+word = 'hello'
+if word.islower():
+    print(f"{word} consists only of lowercase letters")
+else:
+    print(f"{word} contains uppercase letters or non-alphabetic characters")
+
+user_input = input("Enter a word: ")
+if user_input.islower():
+    print(f"{user_input} is lowercase")
+else:
+    print(f"{user_input} is not lowercase")
+
+words = ['apple', 'Banana', 'cherry']
+for word in words:
+    if word.islower():
+        print(f"{word} is lowercase")
+    else:
+        print(f"{word} is not lowercase")
+
+words = ['apple', 'Banana', 'cherry', 'dog', 'ELEPHANT']
+lowercase_words = [word for word in words if word.islower()]
+print("Lowercase words:", lowercase_words)
+
+# Isspace Function :
+
+s = "   "
+if s.isspace():
+    print("The string contains only whitespace characters.")
+else:
+    print("The string contains non-whitespace characters.")
+
+s = "   Hello, World!   "
+trimmed_string = s.strip()
+print(trimmed_string) 
+
+s = "Hello   World"
+words = s.split()
+print(words)  
+
+s = "Hello, World!"
+whitespace_count = sum(1 for char in string if char.isspace())
+print(whitespace_count) 
+
+s= "Hello\tWorld"
+replaced_string = s.replace('\t', '-')
+print(replaced_string)  
+
+# Startswith Function :
+s = "Hello, World!"
+if s.startswith("H"):
+    print("The string starts with 'H'")
+
+s = "Hello, World!"
+if s.startswith("Hello"):
+    print("The string starts with 'Hello'")
+
+s = "Hello, World!"
+vowels = ("A", "E", "I", "O", "U")
+if s.startswith(vowels):
+    print("The string starts with a vowel")
+
+s = "Hello, World!"
+options = ["Hi", "Hello", "Hey"]
+if s.startswith(tuple(options)):
+    print("The string starts with one of the options")
+
+s = "Hello, World!"
+prefixes = ("Goodbye", "Farewell", "Hello")
+if s.startswith(prefixes):
+    print("The string starts with one of the prefixes")
+
+# Count function :
+
+s = "Hello, world!"
+count = s.count("l")
+print(count) 
+
+s = "Hello, world!"
+vowels = "aeiou"
+count = sum(1 for char in s if char.lower() in vowels)
+print(count) 
+
+s = "I love programming. Programming is fun!"
+substring = "programming"
+count = s.count(substring)
+print(count)
+
+# Index Function :
+
+s  = "Hello, World!"
+print(s [7]) 
+print(s [-1])
+
+# Replace Function :
+
+
+s = "I like apples."
+new_sentence = s.replace("apples", "oranges")
+print(new_sentence)
+
+s  = "Hello, World!"
+new_text = s.replace(",", "")
+print(new_text)
+
+s = "I am feeling happy, happy, happy!"
+new_message = s.replace("happy", "sad")
+print(new_message)
+
+
+s = "   Remove  the  extra  spaces.   "
+new_text = s.replace(" ", "")
+print(new_text)
+
+# lstrip Function :
+
+t = "     Hello, world!"
+result = t.lstrip()
+print(result)  
+
+t = "+++++Welcome to the Python world!"
+result = t.lstrip("+")
+print(result)  
+
+t = ">>>**!!!*** Important message ***!!!**<<<"
+result = t.lstrip(">*!")
+print(result)  
+
+t = "Chapter 01 - Introduction to Python"
+prefix = "Chapter "
+result = t.lstrip(prefix)
+print(result) 
+
+t = "0000123"
+result = t.lstrip("0")
+print(result) 
+
+
+# Isupper Function :
+
+s = "HELLO"
+print(s.isupper())  
+
+s = "OpenAI"
+print(s.isupper())  
+
+s = "ALL_CAPS_TEXT"
+print(s.isupper())  
+
+s = "PYTHON IS AWESOME"
+print(s.isupper())  
+
+s = "12345"
+print(s.isupper())  
+
+# rfind fynction :
+
+s = "Hello, how are you?"
+index = s.rfind("o")
+print(index)  
+
+s = "Hello, how are you?"
+index = s.rfind("how")
+print(index)  
+
+s = "Hello, how are you?"
+index = s.rfind("o", 0, -1)
+print(index)  
+
+s = "Hello, how are you?"
+index = s.rfind("xyz")
+print(index) 
+
+
+
