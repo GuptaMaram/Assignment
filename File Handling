@@ -1,0 +1,164 @@
+
+class Eligible(Exception):
+     def __init__(self,a):
+         self.msg=a
+
+class NotEligible(Exception):                                                    
+     def __init__(self,a):                                      
+         self.msg=a
+    
+age=int(input("enter you are age to check vote eligibility : "))
+if age>18:
+     raise Eligible(" you are eligible for voting")
+elif age<18:
+     raise NotEligible(" you are not eligible need to get 18 years for voting")
+
+
+
+
+#write a program to print a number of lines ,words and character present in the give file
+def count_file_stats(filename):
+    try:
+        with open(filename, 'r') as file:
+            text = file.read()
+            lines = text.split('\n')
+            word_list = text.split()
+            word_count = len(word_list)
+            character_count = len(text)
+
+            print(f"Number of lines: {len(lines)}")
+            print(f"Number of words: {word_count}")
+            print(f"Number of characters: {character_count}")
+    except FileNotFoundError:
+        print(f"The file '{filename}' was not found.")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+if __name__ == "__main__":
+    file_name = input("Enter the filename: ")
+    count_file_stats(file_name)
+
+#write a program to show the content of a file and if file not exist then tell the user file is not available
+try:
+    # Ask the user for the file name
+    file_name = input("Enter the file name: ")
+
+    # Try to open the file for reading
+    with open(file_name, 'r') as file:
+        # Read and display the file's content
+        content = file.read()
+        print("File contents:")
+        print(content)
+
+except FileNotFoundError:
+    print(f"The file '{file_name}' does not exist.")
+
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+#write a pro for handling binary data for video file
+# Writing binary data to a file
+with open("video_data.bin", "wb") as file:
+    data = b"This is binary data for a video file."
+    file.write(data)
+
+# Reading binary data from a file
+with open("video_data.bin", "rb") as file:
+    binary_data = file.read()
+    print(binary_data)
+
+
+# Exception Handling remaining Codes :
+
+
+
+
+#Handling ZeroDivisionError with a user-defined function:
+
+def divide_by_zero():
+    try:
+        num = int(input("Enter a number: "))
+        result = 10 / num
+    except ZeroDivisionError:
+        print("Error: Division by zero")
+    finally:
+        print("Execution completed")
+
+divide_by_zero()
+
+
+#Raising ValueError for invalid integer input with a user-defined function:
+
+def get_valid_integer():
+    try:
+        user_input = input("Enter an integer: ")
+        if not user_input.isdigit():
+            raise ValueError("Invalid integer input")
+        num = int(user_input)
+    except ValueError as e:
+        print(e)
+    finally:
+        print("Execution completed")
+
+get_valid_integer()
+
+
+#Handling TypeError for non-numerical inputs with a user-defined function:
+
+def add_numbers():
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        result = num1 + num2
+    except ValueError:
+        print("Error: Inputs must be numerical")
+    finally:
+        print("Execution completed")
+
+add_numbers()
+
+
+#Handling IndexError for list operations with a user-defined function:
+
+def get_list_value():
+    my_list = [1, 2, 3]
+    try:
+        index = int(input("Enter an index: "))
+        value = my_list[index]
+    except IndexError:
+        print("Error: Index is out of range")
+    finally:
+        print("Execution completed")
+
+get_list_value()
+
+
+#Handling KeyboardInterrupt for user input with a user-defined function:
+
+def get_user_input():
+    try:
+        user_input = input("Enter a number: ")
+    except KeyboardInterrupt:
+        print("User cancelled input")
+    finally:
+        print("Execution completed")
+
+get_user_input()
+
+
+#Handling ArithmeticError for division with a user-defined function:
+
+def divide_numbers():
+    try:
+        num1 = int(input("Enter the numerator: "))
+        num2 = int(input("Enter the denominator: "))
+        result = num1 / num2
+    except ArithmeticError:
+        print("Error: Arithmetic error occurred")
+    finally:
+        print("Execution completed")
+
+divide_numbers()
+
+
+
