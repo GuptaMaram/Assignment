@@ -1,0 +1,129 @@
+
+
+#Break Statements :
+
+
+my_list = [1, 2, 3, 4, 5, 6]
+target = 4
+
+for num in my_list:
+    if num == target:
+        print("Target found!")
+        break
+    print(num)
+
+my_list = [10, 20, 30, 40, 50, 60]
+
+for num in my_list:
+    if num > 30:
+        break
+    print(num)
+
+my_list = [1, 3, 5, 2, 4, 6, 7]
+
+for num in my_list:
+    if num % 2 == 0:
+        print("First even number found:", num)
+        break
+    print(num)
+
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+# program to find first 5 multiples of 6
+
+i = 1
+
+while i <= 10:
+    print('6 * ',(i), '=',6 * i)
+
+    if i >= 5:
+        break
+    
+    i = i + 1
+
+
+# Continue Statements :
+
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for num in numbers:
+    if num % 2 == 0:
+        continue
+    print(num)
+
+numbers = [1, 2, 3, 4, 'skip', 6, 7, 8, 'skip', 10]
+
+for num in numbers:
+    if num == 'skip':
+        continue
+    print(num)
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for num in numbers:
+    if num < 5:
+        continue
+    print(num)
+
+# program to print odd numbers from 1 to 10
+
+num = 0
+
+while num < 10:
+    num += 1
+    
+    if (num % 2) == 0:
+        continue
+
+    print(num)
+
+    mixed_data = [1, 'apple', 3.14, 'banana', True, 'skip', [1, 2, 3]]
+
+for item in mixed_data:
+    if isinstance(item, str):
+        continue
+    print(item)
+
+
+# Pass Statements :
+
+
+
+my_list = [1, 2, 3, None, 5, 6, None]
+for item in my_list:
+    if item is None:
+        pass
+    else:
+        print(item)
+
+
+my_list = [1, 2, 3, 4, 5]
+for item in my_list:
+    if item % 2 == 0:
+        pass  
+    else:
+        print(item)
+
+
+def process_list(my_list):
+    for item in my_list:
+        pass
+
+
+class MyClass:
+    pass
+
+obj = MyClass()
+
+
+value = 10
+if value < 5:
+    pass
+elif value > 10:
+    pass
+else:
+    
+    print("Value is between 5 and 10")
