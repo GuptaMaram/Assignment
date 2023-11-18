@@ -1,0 +1,81 @@
+
+# Add of Sets :
+
+s = {1, 2, 3}
+s.add(4)
+print(s)  
+
+s = {"red", "blue", "green"}
+s.add("yellow")
+print(s)  
+
+s = {1.5, 2.7, 3.14}
+s.add(2.7)
+print(s)  
+
+s = {(1, 2), (3, 4), (5, 6)}
+s.add((7, 8))
+print(s)  
+
+s = {1, "apple", 3.14}
+s.add(True)
+print(s)
+
+# Copy of Sets :
+
+s = {1, 2, 3, 4, 5}
+s1 = s.copy()
+print(s1) 
+
+s = {1, 2, 3}
+s1 = s.copy()
+s1.add(4)
+print(s)  
+print(s1)    
+
+s= {"apple", "banana", "cherry"}
+s1 = s.copy()
+
+s1.remove("banana")
+print(s) 
+print(s1)    
+
+
+s= {1, 2, 3}
+s1 = s.copy()
+print(s1)  
+
+
+s = {4, 5, 6}
+s1 = s.copy()
+s1.add(7)
+print(s)  
+print(s1) 
+
+# Update of Sets :
+
+s1 = {1, 2, 3}
+s2 = {3, 4, 5}
+s1.update(s2)
+print(s1)  
+
+s1 = {1, 2, 3}
+l1 = [3, 4, 5]
+s1.update(l1)
+print(s1)  
+
+s1 = {1, 2, 3}
+t1 = (3, 4, 5)
+s1.update(t1)
+print(s1)  
+
+s1 = {1, 2, 3}
+string = "345"
+s1.update(string)
+print(s1)  
+
+s1 = {1, 2, 3}
+l1 = [3, 4, 5]
+t1 = (5, 6, 7)
+s1.update(l1, t1)
+print(s1)  
