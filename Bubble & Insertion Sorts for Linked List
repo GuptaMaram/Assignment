@@ -1,0 +1,214 @@
+
+# Bubble Sort for Linked List : 
+
+
+'''
+append
+Prepend
+Delete
+Display
+delete from anywhere in the linkedlist
+insert at middle in the linkedlist
+'''
+
+
+class Head:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def isEmpty(self):
+        return self.head is None
+
+    def append(self, data):
+        newHead = Head(data)
+        if self.isEmpty():
+            self.head = newHead
+            return
+        
+        current = self.head
+        while current.next:
+            current = current.next
+        else:
+            current.next = newHead
+
+    def prepend(self, data):
+        newHead = Head(data)
+        newHead.next = self.head
+        self.head = newHead
+
+    def insert_at_any_position(self, value, position):
+        newHead = Head(value)
+        if position == 0:
+            newHead.next = self.head
+            self.head = newHead
+
+        else:
+            current = self.head
+
+            for i in range(position-1):
+                if current is None:
+                    return("index out of range")
+                else:
+                    current = current.next
+
+            newHead.next = current.next
+            current.next = newHead
+def delete_at_position(self, position):
+        if position == 0:
+            if self.head:
+                self.head = self.head.next
+            return
+
+        current = self.head
+        prev = None
+        index = 0
+
+        while current and index < position:
+             if current is None:
+              current = current.next 
+        index += 1
+
+        if current:
+          current.next = newHead
+
+def displayLl(self):
+        current = self.head
+        while current is not None:
+            print(current.data, end = "-->")
+            current = current.next
+        print("None")
+
+def delete(self, data):
+        if self.isEmpty():
+            return
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+        
+        current = self.head
+        while current.next:
+            if current.next.data == data:
+                current.next = current.next.next
+                return
+            current = current.next
+
+
+ll = LinkedList()
+ll.append(765)
+ll.append(76)
+
+ll.prepend(23)
+ll.delete(76)
+ll.delete_at_any_position(87)
+ll.insert_at_any_position(87,1)
+ll.displayLl()
+
+# Insertion Sort  for Linked List :
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = new_node
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+
+    def insertion_sort(self):
+        if self.head is None or self.head.next is None:
+            return
+
+        sorted_head = None
+        current = self.head
+
+        while current:
+            next_node = current.next
+            if sorted_head is None or current.data < sorted_head.data:
+                current.next = sorted_head
+                sorted_head = current
+            else:
+                temp = sorted_head
+                while temp.next and temp.next.data < current.data:
+                    temp = temp.next
+                current.next = temp.next
+                temp.next = current
+            current = next_node
+
+        self.head = sorted_head
+
+# Example usage:
+if __name__ == "__main__":
+    linked_list = LinkedList()
+    linked_list.insert(5)
+    linked_list.insert(2)
+    linked_list.insert(9)
+    linked_list.insert(1)
+    linked_list.insert(5)
+
+    print("Original Linked List:\n")
+    linked_list.display()
+
+    linked_list.insertion_sort()
+
+    print("Linked List after Insertion Sort:\n")
+    linked_list.display()
+
+
+
+# Slection Sort
+
+def selectionSort(arr,l):
+    for i in range(l):
+        minIndex = i
+        for j in range(i+1,l):
+            if arr[j]< arr[minIndex]:
+                minIndex = j
+
+        arr[i],arr[minIndex] = arr[minIndex],arr[i]
+
+
+arr = [5,1,4,2,445,65,6]
+l = len(arr)
+res = (selectionSort(arr,l))
+print(arr)
+
+# Insertion Sort
+def insertionSort(arr,l):
+    for i in range(1,l):
+        temp = arr[i]
+        j = i-1
+
+        while j>=0 and temp<arr[j]:
+            arr[j+1] = arr[j]
+            j = j-1
+        arr[j+1] = temp
+arr = [5,1,4,2,445,65,6]
+l = len(arr)
+res = (insertionSort(arr,l))
+print(arr)
+
+
+
+
