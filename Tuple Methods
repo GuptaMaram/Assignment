@@ -1,0 +1,402 @@
+# Count of Tuple :
+
+t = (1, 2, 3, 2, 4, 2)
+count_of_2 = t.count(2)
+print(count_of_2)  
+
+
+from collections import Counter
+
+t = (1, 2, 3, 2, 4, 2)
+tuple_counter = Counter(t)
+count_of_2 = tuple_counter[2]
+print(count_of_2)  
+
+
+t = (1, 2, 3, 2, 4, 2)
+count_of_2 = 0
+for item in t:
+    if item == 2:
+        count_of_2 += 1
+print(count_of_2) 
+
+
+t = (1, 2, 3, 2, 4, 2)
+count_of_2 = sum(1 for item in t if item == 2)
+print(count_of_2)  
+
+
+t  = (1, 2, 3, 2, 4, 2)
+filtered_tuple = filter(lambda x: x == 2, t)
+count_of_2 = len(list(filtered_tuple))
+print(count_of_2) 
+
+# Index of Tuple :
+
+t = (10, 20, 30, 40, 50)
+element_to_find = 30
+index = t.index(element_to_find)
+print(f"The index of {element_to_find} is: {index}")
+
+
+t = (10, 20, 30, 20, 40, 20)
+element_to_find = 20
+index = t.index(element_to_find)
+print(f"The index of {element_to_find} is: {index}")
+
+
+t = (10, 20, 30, 40, 50, 20, 60)
+element_to_find = 20
+start_index = 2
+end_index = 6
+index = t.index(element_to_find, start_index, end_index)
+print(f"The index of {element_to_find} between index {start_index} and {end_index} is: {index}")
+
+
+t = ((1, 2), (3, 4), (5, 6), (7, 8))
+element_to_find = (5, 6)
+index = t.index(element_to_find)
+print(f"The index of {element_to_find} is: {index}")
+
+
+t = (10, 20, 30, 40, 50)
+element_to_find = 60
+try:
+    index = t.index(element_to_find)
+    print(f"The index of {element_to_find} is: {index}")
+except ValueError:
+    print(f"{element_to_find} is not in the tuple.")
+
+# Length of Tuple :
+
+
+t = ()
+length = len(t)
+print(length)  
+
+t = ('apple', 'banana', 'orange', 'grape')
+length = len(t)
+print(length)  
+
+t = (1, 2, (3, 4), (5, 6, 7))
+length = len(t)
+print(length)  
+
+t = ('a', 'b', 'a', 'c', 'b', 'd')
+length = len(t)
+print(length)  
+
+t = ('hello', 42, True, [1, 2, 3], {'name': 'John'})
+length = len(t)
+print(length)
+
+# Range of Tuple :
+
+t = tuple(range(0, 11, 2))
+print(t)  
+
+t  = tuple(range(5))
+print(t)  
+
+t = tuple(range(2, 8))
+print(t)  
+
+t = tuple(range(1, 10, 2))
+print(t)  
+
+t = tuple(range(10, 0, -2))
+print(t) 
+
+
+# Comparison of Tuples :
+
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+
+if tuple1 < tuple2:
+    print("tuple1 is smaller than tuple2")
+elif tuple1 > tuple2:
+    print("tuple1 is larger than tuple2")
+else:
+    print("tuple1 and tuple2 are equal")
+
+tuple1 = ("apple", "banana")
+tuple2 = ("orange", "banana")
+
+if tuple1 < tuple2:
+    print("tuple1 is smaller than tuple2")
+elif tuple1 > tuple2:
+    print("tuple1 is larger than tuple2")
+else:
+    print("tuple1 and tuple2 are equal")
+
+tuple1 = (1, "apple")
+tuple2 = (2, "banana")
+
+if tuple1 < tuple2:
+    print("tuple1 is smaller than tuple2")
+elif tuple1 > tuple2:
+    print("tuple1 is larger than tuple2")
+else:
+    print("tuple1 and tuple2 are equal")
+
+tuple1 = (1, ("apple", "banana"))
+tuple2 = (1, ("orange", "banana"))
+
+if tuple1 < tuple2:
+    print("tuple1 is smaller than tuple2")
+elif tuple1 > tuple2:
+    print("tuple1 is larger than tuple2")
+else:
+    print("tuple1 and tuple2 are equal")
+
+empty_tuple1 = ()
+empty_tuple2 = ()
+
+if empty_tuple1 == empty_tuple2:
+    print("Both tuples are empty and equal")
+else:
+    print("Tuples are not empty or not equal")
+
+# Packing & Unpacking of Tuples :
+
+# Unpacking a tuple into separate variables
+
+person_tuple = ('Alice', 25, 'Teacher')
+name, age, occupation = person_tuple
+
+print(name)        
+print(age)         
+print(occupation)  
+
+# Unpacking with extended unpacking
+
+person_tuple = ('Bob', 40, 'Doctor', 'New York')
+name, age, *other_info = person_tuple
+
+print(name)        
+print(age)        
+print(other_info)  
+
+# Swapping variables using tuple unpacking
+
+a = 10
+b = 20
+
+a, b = b, a
+
+print(a)  
+print(b)  
+
+# Function returning multiple values as a tuple
+
+def get_user_info():
+    name = 'Jane'
+    age = 28
+    email = 'jane@example.com'
+    return name, age, email
+
+user_info = get_user_info()
+print(user_info) 
+
+# Swap two variables using tuple packing and unpacking
+
+a = 5
+b = 10
+a, b = b, a
+
+print(a)  
+print(b) 
+
+# Tuple Comprehension :
+
+t  = tuple(x**2 for x in range(1, 6))
+print(t)  
+
+t = tuple((x, x*2) for x in range(1, 6))
+print(t)  
+
+s = "hello"
+t = tuple(char.upper() for char in s)
+print(t)  
+
+l = ["apple", "banana", "cherry", "orange"]
+t  = tuple(len(word) for word in l)
+print(t)  
+
+l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+t = tuple(x for x in l if x % 2 == 0)
+print(t) 
+
+
+numbers = tuple(map(int, input("0,1,2,3,4,5,6,7,8,9").split(0,10)))
+
+sum_of_numbers = sum(0,10)
+average_of_numbers = sum(0,10) / len(0,10)
+
+result_tuple = (x for x in (sum_of_numbers, average_of_numbers))
+
+print(tuple(result_tuple))
+
+
+
+def main():
+    
+    input_str = input("Enter a tuple of numbers (comma-separated): ")
+    
+    numbers = tuple(map(float, input_str.split(',')))
+    
+    total_sum = sum(numbers)
+    
+    average = total_sum / len(numbers)
+    
+    print("Sum:", total_sum)
+    print("Average:", average)
+
+if __name__ == "__main__":
+    main()
+    
+
+# Sorted of Tuple :
+
+tuples_list = [(3, 5), (1, 2), (4, 6), (2, 1)]
+sorted_tuples = sorted(tuples_list)
+print(sorted_tuples)  
+
+tuples_list = [(3, 5), (1, 2), (4, 6), (2, 1)]
+sorted_tuples = sorted(tuples_list, key=lambda x: x[1])
+print(sorted_tuples)  
+
+tuples_list = [(3, 5), (1, 2), (4, 6), (2, 1)]
+sorted_tuples = sorted(tuples_list, key=lambda x: x[1], reverse=True)
+print(sorted_tuples)
+
+tuples_list = [(3, 5, 1), (1, 2, 3), (4, 6, 2), (2, 1, 0)]
+index_to_sort = 2
+sorted_tuples = sorted(tuples_list, key=lambda x: x[index_to_sort])
+print(sorted_tuples)  
+
+
+
+# Sort & Sorted for List & Tuple :
+
+
+def main():
+    # 1. Sort a list in-place using the sort() method
+    numbers = [5, 2, 8, 3, 1]
+    numbers.sort()
+    print("Sorted list using sort():", numbers)
+
+    # 2. Sort a list and store the sorted result in a new variable using sorted()
+    numbers = [5, 2, 8, 3, 1]
+    sorted_numbers = sorted(numbers)
+    print("Original list:", numbers)
+    print("Sorted list using sorted():", sorted_numbers)
+
+    # 3. Sort a list of strings in alphabetical order using sort()
+    fruits = ['apple', 'banana', 'orange', 'grape']
+    fruits.sort()
+    print("Sorted list of fruits using sort():", fruits)
+
+    # 4. Sort a list of strings in alphabetical order and ignore case using sorted()
+    fruits = ['Apple', 'banana', 'orange', 'grape']
+    sorted_fruits = sorted(fruits, key=str.lower)
+    print("Original list of fruits:", fruits)
+    print("Sorted list of fruits using sorted() with case-insensitivity:", sorted_fruits)
+
+    # 5. Sort a list of tuples based on the second element of each tuple using sort()
+    student_grades = [('Alice', 85), ('Bob', 72), ('Charlie', 90)]
+    student_grades.sort(key=lambda x: x[1])
+    print("Sorted list of student grades using sort():", student_grades)
+
+    # 6. Sort a list of dictionaries based on a specific key using sorted()
+    students = [{'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 22}, {'name': 'Charlie', 'age': 30}]
+    sorted_students = sorted(students, key=lambda x: x['age'])
+    print("Original list of students:", students)
+    print("Sorted list of students using sorted() based on age:", sorted_students)
+
+    # 7. Sort a list of numbers in reverse order using sort()
+    numbers = [5, 2, 8, 3, 1]
+    numbers.sort(reverse=True)
+    print("Sorted list in reverse order using sort():", numbers)
+
+    # 8. Sort a list of numbers in reverse order using sorted()
+    numbers = [5, 2, 8, 3, 1]
+    sorted_numbers = sorted(numbers, reverse=True)
+    print("Original list:", numbers)
+    print("Sorted list in reverse order using sorted():", sorted_numbers)
+
+    # 9. Sort a list of strings based on their lengths using sort()
+    words = ['apple', 'banana', 'orange', 'grape']
+    words.sort(key=len)
+    print("Sorted list of words based on length using sort():", words)
+
+    # 10. Sort a list of strings based on their lengths using sorted()
+    words = ['apple', 'banana', 'orange', 'grape']
+    sorted_words = sorted(words, key=len)
+    print("Original list of words:", words)
+    print("Sorted list of words based on length using sorted():", sorted_words)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+def main():
+    # Example 1: Sorting a tuple in ascending order using sorted()
+    tuple1 = (5, 2, 8, 1, 3)
+    sorted_tuple1 = sorted(tuple1)
+    print("Sorted Tuple 1:", sorted_tuple1)
+
+    # Example 2: Sorting a tuple in descending order using sorted()
+    tuple2 = (10, 4, 6, 9, 7)
+    sorted_tuple2 = sorted(tuple2, reverse=True)
+    print("Sorted Tuple 2 (Descending):", sorted_tuple2)
+
+    # Example 3: Sorting a tuple of strings alphabetically using sorted()
+    tuple3 = ('apple', 'orange', 'banana', 'grapes', 'cherry')
+    sorted_tuple3 = sorted(tuple3)
+    print("Sorted Tuple 3:", sorted_tuple3)
+
+    # Example 4: Sorting a tuple of strings by length using sorted()
+    tuple4 = ('pear', 'kiwi', 'watermelon', 'strawberry', 'mango')
+    sorted_tuple4 = sorted(tuple4, key=len)
+    print("Sorted Tuple 4 (By Length):", sorted_tuple4)
+
+    # Example 5: Sorting a tuple of tuples based on the second element using sorted()
+    tuple5 = ((3, 7), (1, 2), (5, 4), (2, 9), (4, 6))
+    sorted_tuple5 = sorted(tuple5, key=lambda x: x[1])
+    print("Sorted Tuple 5 (By Second Element):", sorted_tuple5)
+
+    # Example 6: In-place sorting a tuple in ascending order using sort()
+    tuple6 = (9, 3, 1, 8, 5)
+    mutable_list = list(tuple6)
+    mutable_list.sort()
+    tuple6 = tuple(mutable_list)
+    print("Sorted Tuple 6:", tuple6)
+
+    # Example 7: In-place sorting a tuple in descending order using sort()
+    tuple7 = (6, 2, 10, 4, 8)
+    mutable_list = list(tuple7)
+    mutable_list.sort(reverse=True)
+    tuple7 = tuple(mutable_list)
+    print("Sorted Tuple 7 (Descending):", tuple7)
+
+    # Example 8: Sorting a tuple of dictionaries based on a specific key using sorted()
+    tuple8 = ({'name': 'John', 'age': 30}, {'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 35})
+    sorted_tuple8 = sorted(tuple8, key=lambda x: x['age'])
+    print("Sorted Tuple 8 (By Age):", sorted_tuple8)
+
+    # Example 9: Sorting a tuple of tuples in descending order based on the sum of elements using sorted()
+    tuple9 = ((3, 7), (1, 2), (5, 4), (2, 9), (4, 6))
+    sorted_tuple9 = sorted(tuple9, key=lambda x: sum(x), reverse=True)
+    print("Sorted Tuple 9 (Descending by Sum):", sorted_tuple9)
+
+    # Example 10: Sorting a tuple in descending order by absolute values using sorted()
+    tuple10 = (-5, 2, -8, 1, -3)
+    sorted_tuple10 = sorted(tuple10, key=abs, reverse=True)
+    print("Sorted Tuple 10 (Descending by Absolute Values):", sorted_tuple10)
+
+if __name__ == "__main__":
+    main()
