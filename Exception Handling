@@ -1,0 +1,289 @@
+
+
+#Control Flow in try-except Blocks :
+
+#Case-1 :No Exception is raised
+
+try:
+    print(10/2)  
+except:
+    print("No error occured")
+
+try:
+    print(10/5)
+except:
+    print("No error occured")
+
+
+#Case-2 : Exception raised at Statement-2 & except block is matched
+
+try:
+    print(10/2)
+    print(10/0)
+    print(5/2)
+except:ZeroDivisionError
+print("Value cannot be divided by Zero")
+
+try:
+    print(8/5)
+    print(5/0)
+    print(4/2)
+except:ZeroDivisionError
+print("Value cannot be divided by Zero")
+
+#Case-3 : Exception raised at Statement-2 & except block is  not matched
+
+try:
+    print(8/4)
+    print(4/0)
+    print(3/2)
+except:ValueError
+print("Value cannot be divided by Zero")
+
+try:
+    print(4/8)
+    print(7/0)
+    print(2/5)
+except:ValueError
+print("Value cannot be divided by Zero")
+
+#Case-4 : Exception raised at Statement-4 
+
+
+try:
+    print(8/4)
+    print(8/5)
+    print(5/4)
+    print(8/0)
+except:ValueError
+print("Value cannot be divided by Zero")
+
+try:
+    print(8/4)
+    print(6/5)
+    print(5/4)
+    print(9/0)
+except:ZeroDivisionError
+print("Value cannot be divided by Zero")
+
+#Control Flow in try-except-finally Blocks :
+
+#Case-1 : No Exception is raised
+
+try:
+    print(10/2)
+    print("Try block executed successfully.")
+except ZeroDivisionError as e:
+    print("Error:", e)
+finally:
+    print("Finally block executed.")
+
+try:
+    value = int("42")
+    print("Try block executed successfully.")
+except ValueError as e:
+    print("Error:", e)
+finally:
+    print("Finally block executed.")
+
+
+#Case-2 : Exception raised at Statement-3 & it is handled
+
+try:
+    print(7/6)
+    print(42/7)
+    print(10/0)
+    print(54/9)
+
+except ZeroDivisionError as e:
+    print("Exception occurred:", e)
+    print("Exception occured")
+    print(64/8)
+    print(81/9)
+
+finally:
+    print("Finally block")
+
+
+try:
+    l = [1, 2, 3]
+    print(45/5)
+    print(72/6)
+    element = l[5]
+    print(52/4)
+    
+except IndexError as e:
+    print("Exception occurred:", e)
+    print("exception occured")
+    print(48/4)
+    print(60/5)
+    
+finally:
+    print("Finally block")
+
+#Case-3 : Exception raised at Statement-2 & it is not handled
+
+try:
+    num = 10
+    result = num / 0
+    print("This won't be printed")
+except:
+    print("Exception caught and handled")
+finally:
+    print("Finally block executed")
+
+
+try:
+    l = [1, 2, 3]
+    value = l[4]
+    print("This won't be printed")
+except:
+    print("Exception caught and handled")
+finally:
+    print("Finally block executed")
+
+
+#Case-4 : Exception raised at Statement-4 & but before the finally block is executed
+
+
+try:
+    print(4/2)
+    print(8/4)
+    print(6/8)
+    print(1/0)
+    print(9/3)   
+except ZeroDivisionError:
+    print("Caught a ZeroDivisionError")
+    
+finally:
+    print("Final block")
+
+
+try:
+    print(8/6)
+    print(6/5)
+    print(8/7)
+    l= [1, 2, 3]
+    print(l[5])
+    print(20/7)
+    
+except IndexError:
+    print("Caught an IndexError")
+    
+finally:
+    print("Final block")
+
+
+#Case-5 : Exception raised at Statement-5
+
+
+try:
+     print(6/5)
+     print(28/7)
+     print(56/7)
+     print(40/5)
+     print(10/0)
+except ZeroDivisionError:
+    print("ZeroDivisionError caught in except block")
+finally:
+    print("Statement-5 inside the finally block")
+
+
+try:
+     print(25/5)
+     print(20/4)
+     print(35/7)
+     print(85/5)
+     print(20/0)
+except ZeroDivisionError:
+    print("ZeroDivisionError caught in except block")
+finally:
+    print("Statement-5 inside the finally block")
+
+
+#Case-6 : Exception raised at Statement-6
+
+
+try:
+    print(65/5)
+    print(75/5)
+    print(54/3)
+    print(57/3)
+    print(60/3)
+    print(14/0)
+except ZeroDivisionError:
+    print("value cannot be divided by zero")
+finally:
+    print("final block")
+
+
+try:
+    print(24/4)
+    print(40/8)
+    print(49/7)
+    print(56/7)
+    print(63/9)
+    l  = [1, 2, 3]
+    item = l[4]
+except IndexError:
+    print("Index is out of range")
+finally:
+    print("final block")
+
+
+try:
+    print("outer try 1")#statment-1
+    print("outer try 2")#statment-2
+    print("outer try 3")#statment-3
+    try:
+        print("inner try 1")#statment-4
+        print("inner try 2")#statment-5
+        print("inner try 3")#statment-6
+    except xxxx:
+        print("inner except block")#statment-7
+    finally:
+        print("inner finally block")#statment-8
+    print("normal statment ")#statment-9
+except yyyy:
+    print("outer except block")#statment-10
+finally:
+    print("outer finally block")#statment-11
+print("outside the blocks")#statment-12
+
+
+# Control Flow in Nested try-except-finally blocks :25 Cases have to written for this Concept
+
+
+
+try:
+    print("try")#statement-1
+except:
+    print("except")#statement-2
+else:
+    print("else")#statement-3
+finally:
+    print("finally")#statement-4
+    print ("outside the blocks")#satement-5
+
+
+
+
+# Control Flow in Nested try-except-finally-else blocks :25 Cases have to written for this Concept
+
+try:
+    print("try")#statement-1
+except:
+    print("except")#statement-2                    #Exception Handling
+else:
+    print("else")#statement-3
+finally:
+    print("finally")#statement-4
+    print ("outside the blocks")#satement-5
+
+
+
+
+
+
+
+
