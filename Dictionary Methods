@@ -1,0 +1,484 @@
+
+# Clear of Dictionary  :
+
+
+ # Clearing an Empty Dictionary :
+
+my_dict = {}
+print("Original Dictionary:", my_dict)
+my_dict.clear()
+print("Dictionary after clear():", my_dict)
+
+
+#  Clearing a Non-Empty Dictionary :
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+print("Original Dictionary:", my_dict)
+my_dict.clear()
+print("Dictionary after clear():", my_dict)
+
+
+#Clearing a Dictionary with Different Data Types :
+
+
+mixed_dict = {'name': 'John', 'age': 25, 'is_student': False}
+print("Original Dictionary:", mixed_dict)
+mixed_dict.clear()
+print("Dictionary after clear():", mixed_dict)
+
+
+# Clearing a Dictionary with Nested Dictionaries :
+
+nested_dict = {'a': {'x': 1, 'y': 2}, 'b': {'x': 3, 'y': 4}}
+print("Original Dictionary:", nested_dict)
+nested_dict.clear()
+print("Dictionary after clear():", nested_dict)
+
+
+# Clearing a Dictionary in a Loop :
+
+
+my_dict = {'one': 1, 'two': 2, 'three': 3}
+print("Original Dictionary:", my_dict)
+for _ in range(3):
+    my_dict.clear()
+    print("Dictionary after clear():", my_dict)
+
+
+
+# Copy for Dictionary :
+
+
+# Shallow Copy :
+
+
+original_dict = {'name': 'John', 'age': 25, 'city': 'New York'}
+copied_dict = original_dict.copy()
+
+print("Original Dictionary:", original_dict)
+print("Copied Dictionary:", copied_dict)
+
+
+# Modify Shallow Copy :
+
+
+original_dict = {'name': 'Alice', 'age': 30, 'city': 'London'}
+copied_dict = original_dict.copy()
+copied_dict['age'] = 31
+print("Original Dictionary:", original_dict)
+print("Copied Dictionary:", copied_dict)
+
+
+# Shallow Copy with Nested List :
+
+
+original_dict = {'grades': [90, 85, 92], 'subject': 'Math'}
+copied_dict = original_dict.copy()
+copied_dict['grades'][0] = 95
+
+print("Original Dictionary:", original_dict)
+print("Copied Dictionary:", copied_dict)
+
+
+#  Shallow Copy with Nested Dictionary :
+
+
+original_dict = {'person': {'name': 'Bob', 'age': 28}, 'job': 'Engineer'}
+copied_dict = original_dict.copy()
+copied_dict['person']['age'] = 29
+
+print("Original Dictionary:", original_dict)
+print("Copied Dictionary:", copied_dict)
+
+
+# Deep Copy :
+
+
+import copy
+
+original_dict = {'details': {'name': 'Sara', 'address': {'city': 'Paris', 'zip': '75001'}}, 'occupation': 'Designer'}
+deep_copied_dict = copy.deepcopy(original_dict)
+deep_copied_dict['details']['address']['zip'] = '75002'
+print("Original Dictionary:", original_dict)
+print("Deep Copied Dictionary:", deep_copied_dict)
+
+
+# Get of Dictionary :
+
+
+# Basic Usage :
+
+
+my_dict = {'a': 10, 'b': 20, 'c': 30}
+value_a = my_dict.get('a')
+value_d = my_dict.get('d')
+
+print(value_a)  
+print(value_d)  
+
+# Using Default Value :
+
+
+my_dict = {'a': 100, 'b': 200, 'c': 300}
+value_d = my_dict.get('d', 999)  
+print(value_d)
+
+
+# Nested Dictionaries :
+
+
+nested_dict = {'outer': {'inner': 'value'}}
+inner_value = nested_dict.get('outer', {}).get('inner')
+
+print(inner_value)  
+
+
+# In a loop :
+
+fruits_dict = {'apple': 3, 'banana': 5, 'orange': 2}
+for fruit in ['apple', 'banana', 'grape']:
+    quantity = fruits_dict.get(fruit, 0)
+    print(f"We have {quantity} {fruit}(s).")
+
+
+# Conditional Logic :
+
+
+grades = {'Alice': 85, 'Bob': 92, 'Charlie': 78}
+for student, score in grades.items():
+    grade_category = 'A' if score >= 90 else 'B' if score >= 80 else 'C'
+    print(f"{student}: {score} - Grade: {grade_category}")
+
+
+
+# Update of Dictionary :
+
+
+# Basic Update :
+
+
+# Creating a dictionary
+person_info = {'name': 'John', 'age': 30, 'city': 'New York'}
+person_info.update({'age': 31})
+print(person_info)
+
+
+# Adding New Key-Value Pairs:
+
+
+car_info = {'brand': 'Toyota', 'model': 'Camry'}
+car_info.update({'year': 2022, 'color': 'Blue'})
+print(car_info)
+
+
+# Updating with Iterable :
+
+
+student_info = {'name': 'Alice', 'grade': 'A'}
+student_info.update([('grade', 'B'), ('subject', 'Math')])
+print(student_info)
+
+# Combining Dictionaries :
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+
+dict1.update(dict2)
+
+print(dict1)
+
+
+# Updating with Keyword Arguments :
+
+
+user_profile = {'username': 'jsmith', 'email': 'jsmith@example.com'}
+user_profile.update(email='john.smith@example.com', age=25)
+print(user_profile)
+
+
+# Pop of Drctionary :
+
+
+ # Basic Usage :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+removed_value = my_dict.pop('b')
+print(f'Removed value: {removed_value}')
+print(f'Updated dictionary: {my_dict}')
+
+# Key Not Found :
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+removed_value = my_dict.pop('z', 'Key not found')
+print(f'Removed value: {removed_value}')
+print(f'Updated dictionary: {my_dict}')
+
+
+# Pop with Default :
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+removed_value = my_dict.pop('b', 0)
+print(f'Removed value: {removed_value}')
+print(f'Updated dictionary: {my_dict}')
+
+
+# Pop and Update :
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+removed_value = my_dict.pop('b')
+print(f'Removed value: {removed_value}')
+print(f'Updated dictionary: {my_dict}')
+
+
+#  Pop with Default (Key Found) :
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+removed_value = my_dict.pop('a', 0)
+print(f'Removed value: {removed_value}')
+print(f'Updated dictionary: {my_dict}')
+
+
+# Popitem of Dictionary :
+
+
+# Basic usage :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+key, value = my_dict.popitem()
+print(f'Popped item: ({key}, {value})')
+print('Updated dictionary:', my_dict)
+
+
+#  Handling an empty dictionary :
+
+
+empty_dict = {}
+if empty_dict:
+    key, value = empty_dict.popitem()
+    print(f'Popped item: ({key}, {value})')
+else:
+    print('Dictionary is empty.')
+
+
+#  Using popitem in a loop  :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+while my_dict:
+    key, value = my_dict.popitem()
+    print(f'Popped item: ({key}, {value})')
+print('Updated dictionary:', my_dict)
+
+
+# Popping items until a specific key is found :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+while my_dict:
+    key, value = my_dict.popitem()
+    print(f'Popped item: ({key}, {value})')
+    if key == 'b':
+        break
+print('Updated dictionary:', my_dict)
+
+
+#  Using popitem with an ordered dictionary :
+
+
+from collections import OrderedDict
+
+ordered_dict = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+key, value = ordered_dict.popitem()
+print(f'Popped item: ({key}, {value})')
+print('Updated ordered dictionary:', ordered_dict)
+
+
+# Items of Dictionary :
+
+
+# Basic Usage :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+for key, value in my_dict.items():
+    print(f'Key: {key}, Value: {value}')
+
+
+# Modifying Values :
+
+
+my_dict = {'a': 10, 'b': 20, 'c': 30}
+for key, value in my_dict.items():
+    my_dict[key] = value * 2
+print(my_dict)
+
+
+# Creating a New Dictionary :
+
+
+original_dict = {'a': 1, 'b': 2, 'c': 3}
+double_dict = {key: value * 2 for key, value in original_dict.items()}
+print(double_dict)
+
+my_dict = {'apple': 5, 'banana': 3, 'orange': 8, 'grape': 2}
+filtered_dict = {key: value for key, value in my_dict.items() if value > 4}
+print(filtered_dict)
+
+
+# Checking Key-Value Pairs :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+target_key = 'b'
+target_value = 2
+if (target_key, target_value) in my_dict.items():
+    print(f'The key-value pair ({target_key}, {target_value}) exists in the dictionary.')
+else:
+    print(f'The key-value pair ({target_key}, {target_value}) does not exist in the dictionary.')
+
+
+# Values of Dictionary :
+
+
+# Iterating Over Values :
+
+
+my_dict = {'a': 10, 'b': 20, 'c': 30}
+
+for value in my_dict.values():
+    print(value)
+
+# Check if a Value Exists :
+
+my_dict = {'a': 10, 'b': 20, 'c': 30}
+
+value_to_check = 20
+if value_to_check in my_dict.values():
+    print(f"{value_to_check} exists in the dictionary values.")
+
+
+# Create a List of Values :
+
+my_dict = {'a': 10, 'b': 20, 'c': 30}
+
+values_list = list(my_dict.values())
+print(values_list)
+
+
+# Sum of Values :
+
+
+my_dict = {'a': 10, 'b': 20, 'c': 30}
+
+total = sum(my_dict.values())
+print(f"The sum of values is: {total}")
+
+
+#Filtering Values Based on a Condition :
+
+my_dict = {'a': 10, 'b': 20, 'c': 30, 'd': 40}
+filtered_values = [value for value in my_dict.values() if value > 20]
+print(filtered_values)
+
+
+# Keys of Dictionary :
+
+
+# Basic Usage :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+keys = my_dict.keys()
+print("Keys:", keys)
+
+
+# Iterating through Keys :
+
+
+my_dict = {'apple': 3, 'banana': 5, 'orange': 2}
+print("Keys:")
+for key in my_dict.keys():
+    print(key)
+
+# Checking if a Key Exists :
+
+
+my_dict = {'name': 'John', 'age': 25, 'city': 'New York'}
+search_key = 'age'
+if search_key in my_dict.keys():
+    print(f"{search_key} exists in the dictionary.")
+else:
+    print(f"{search_key} does not exist in the dictionary.")
+
+
+# Converting Keys to a List :
+
+
+my_dict = {'x': 10, 'y': 20, 'z': 30}
+key_list = list(my_dict.keys())
+print("Key List:", key_list)
+
+
+#  Using Keys in a Function :
+
+
+grades = {'Alice': 90, 'Bob': 85, 'Charlie': 92, 'David': 88}
+def print_student_names(grade_dict):
+    for student_name in grade_dict.keys():
+        print(student_name)
+
+print("Student Names:")
+print_student_names(grades)
+
+
+# Setdefault of Dictionary :
+
+
+# Setting Default Values for Keys :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict.setdefault('d', 0)
+print(my_dict) 
+
+
+# Handling Existing Keys :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict.setdefault('b', 99)
+print(my_dict)  
+
+
+# Working with Empty Dictionary :
+
+
+empty_dict = {}
+empty_dict.setdefault('x', 42)
+print(empty_dict)  
+
+
+# Setting Default Values for Multiple Keys  :
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict.setdefault('d', 0)
+my_dict.setdefault('e', 99)
+print(my_dict)  
+
+# Nested Dictionary :
+
+
+nested_dict = {'outer': {'inner': 42}}
+nested_dict.setdefault('outer', {})  
+nested_dict.setdefault('another', {})
+print(nested_dict)
+
+
+
+
+
+
+
